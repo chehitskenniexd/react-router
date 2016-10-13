@@ -4,10 +4,11 @@ import { connect } from 'react-redux';
 import Songs from '../components/Songs';
 import { startSong, pause, play } from '../action-creators/player';
 
-const mapStateToProps = ({ isPlaying, currentSong }, { songs }) => ({
+// songs from ownProps
+const mapStateToProps = ({ isPlaying, currentSong }, ownProps) => ({
   isPlaying,
   currentSong,
-  songs
+  songs: ownProps.selectedArtist ? ownProps.selectedArtist.songs : ownProps.songs
 });
 
 const mapDispatchToProps = dispatch => ({

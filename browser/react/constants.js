@@ -1,6 +1,7 @@
 'use strict';
 
 export const RECEIVE_ALBUMS = 'RECEIVE_ALBUMS';
+export const RECEIVE_ARTIST_ALBUMS = 'RECEIVE_ARTIST_ALBUMS';
 export const RECEIVE_ALBUM = 'RECEIVE_ALBUM';
 
 export const RECEIVE_ARTISTS = 'RECEIVE_ARTISTS';

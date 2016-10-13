@@ -1,6 +1,6 @@
 'use strict';
 
-import { RECEIVE_ALBUMS, RECEIVE_ALBUM } from '../constants';
+import { RECEIVE_ALBUMS, RECEIVE_ALBUM, RECEIVE_ARTIST_ALBUMS } from '../constants';
 import { switchLocation } from './location';
 
 export const receiveAlbums = albums => ({
@@ -12,6 +12,11 @@ export const receiveAlbum = album => ({
   type: RECEIVE_ALBUM,
   album
 });
+
+export const receiveArtistAlbums = artistAlbums => ({
+  type: RECEIVE_ARTIST_ALBUMS,
+  artistAlbums
+})
 
 export const fetchAndGoToAlbum = album =>
   dispatch =>
@@ -29,3 +34,10 @@ export const fetchAlbum = id =>
       .then(album => {
         dispatch(receiveAlbum(album));
       });
+
+export const fetchArtistAlbums = id =>
+  dispatch => 
+    fetch(`/api/artists/${id}/albums`)
+    .then(res => res.json())
+    .then(albums => dispatch(receiveArtistAlbums(albums)))
+    .catch(err => console.log(err));

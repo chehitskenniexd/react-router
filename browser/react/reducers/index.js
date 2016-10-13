@@ -11,9 +11,11 @@ import progress from './progress';
 import location from './location';
 import selectedAlbum from './selectedAlbum';
 import selectedArtist from './selectedArtist';
+import artistAlbums from './artistAlbums';
 
 const rootReducer = combineReducers({
   albums,
+  artistAlbums,
   artists,
   currentSong,
   currentSongList,
