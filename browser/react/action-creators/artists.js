@@ -30,9 +30,9 @@ export const fetchAndGoToArtist = artist =>
       });
   };
 
-export const fetchArtist = artistId =>
+export const fetchArtist = artist_Id =>
   dispatch => {
-    let artistId = `/api/artists/${artistId}`,
+    let artistId = `/api/artists/${artist_Id}`,
       songs = `${artistId}/songs`,
       albums = `${artistId}/albums`;
 
