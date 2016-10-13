@@ -2,7 +2,7 @@
 
 import React from 'react';
 
-export default ({ albums, go }) => (
+export default ({ albums, go, children }) => (
   <div>
     <h3>Albums</h3>
     <div className="row">

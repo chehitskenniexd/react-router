@@ -2,7 +2,7 @@
 
 import React from 'react';
 
-export default ({ artists, go }) => (
+export default ({ artists, go, children}) => (
   <div>
     <h3>Artists</h3>
       <div className="list-group">

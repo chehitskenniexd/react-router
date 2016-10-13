@@ -9,6 +9,8 @@ import ArtistsContainer from '../containers/ArtistsContainer';
 import ArtistContainer from '../containers/ArtistContainer';
 import PlayerContainer from '../containers/PlayerContainer';
 
+
+
 export default class App extends Component {
 
   constructor (props) {
