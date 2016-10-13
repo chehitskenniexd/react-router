@@ -11,6 +11,7 @@ class BaseRoute extends React.Component {
   render() {
     return (
       <div id="main" className="container-fluid">
+
         <div className="col-xs-2">
           <SidebarContainer/>
         </div>
@@ -21,12 +22,11 @@ class BaseRoute extends React.Component {
       </div>
     )
   }
-
 }
 
 ReactDOM.render(
   <Provider store={store}>
-  <Router history={hashHistory}>
+  <Router history={Router.hashHistory}>
     <Route path='/' component={BaseRoute}></Route>
   </Router>
 </Provider>, document.getElementById('app'));
