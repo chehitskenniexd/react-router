@@ -8,6 +8,10 @@ import {Provider} from 'react-redux';
 import AppContainer from './containers/AppContainer';
 import SidebarContainer from './containers/SidebarContainer'
 import PlayerContainer from './containers/PlayerContainer'
+import AlbumsContainer from './containers/AlbumsContainer';
+import ArtistsContainer from './containers/ArtistsContainer';
+
+
 
 class BaseRoute extends React.Component {
   render() {
@@ -29,6 +33,9 @@ class BaseRoute extends React.Component {
 ReactDOM.render(
   <Provider store={store}>
   <Router history={hashHistory}>
-    <Route path='/' component={BaseRoute}></Route>
+    <Route path='/' component={BaseRoute}>
+      <Route path='/Albums' component={AlbumsContainer}/>
+      <Route path='/Artists' component={ArtistsContainer}/>
+    </Route>
   </Router>
 </Provider>, document.getElementById('app'));
