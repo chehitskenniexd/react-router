@@ -5,19 +5,27 @@ import { switchLocation } from './location';
 
 export const receiveAlbums = albums => ({
   type: RECEIVE_ALBUMS,
-  albums 
+  albums
 });
 
 export const receiveAlbum = album => ({
   type: RECEIVE_ALBUM,
-  album 
+  album
 });
 
-export const fetchAndGoToAlbum = album => 
-  dispatch => 
+export const fetchAndGoToAlbum = album =>
+  dispatch =>
     fetch(`/api/albums/${album.id}`)
       .then(res => res.json())
       .then(album => {
         dispatch(receiveAlbum(album));
         dispatch(switchLocation('album'));
+      });
+
+export const fetchAlbum = id =>
+  dispatch =>
+    fetch(`/api/albums/${id}`)
+      .then(res => res.json())
+      .then(album => {
+        dispatch(receiveAlbum(album));
       });

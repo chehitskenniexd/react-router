@@ -2,6 +2,7 @@
 
 import React from 'react';
 import SongsContainer from '../containers/SongsContainer';
+import { Link } from 'react'
 
 export default ({ selectedArtist, go }) => (
   <div>
@@ -11,7 +12,7 @@ export default ({ selectedArtist, go }) => (
       {
         selectedArtist.albums.map(album => (
           <div className="col-xs-4" key={album.id}>
-            <a className="thumbnail" href="#" onClick={() => go(album)}>
+            <Link className="thumbnail" to={`/albums/${album.id}`} onClick={() => go(album)}>
               <img src={ album.imageUrl } />
               <div className="caption">
                 <h5>
@@ -19,7 +20,7 @@ export default ({ selectedArtist, go }) => (
                 </h5>
                 <small>{ album.songs.length } songs</small>
               </div>
-            </a>
+            </Link>
           </div>
         ))
       }
