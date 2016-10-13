@@ -1,7 +1,7 @@
 'use strict';
 
 import React from 'react';
-import { Router, hashHistory, Route, IndexRoute } from 'react-router';
+import { Router, hashHistory, Route, IndexRoute, children } from 'react-router';
 import ReactDOM from 'react-dom';
 import store from './store';
 import {Provider} from 'react-redux';
