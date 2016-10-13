@@ -3,7 +3,7 @@
 import React from 'react';
 import SongsContainer from '../containers/SongsContainer';
 import AlbumsContainer from '../containers/AlbumsContainer';
-import { Link } from 'react'
+import { Link } from 'react-router';
 
 export default class Artist extends React.Component {
   constructor(props) {
@@ -17,7 +17,7 @@ export default class Artist extends React.Component {
 
   render() {
     const { selectedArtist, go } = this.props;
-    console.log(selectedArtist);
+    console.log(selectedArtist.albums);
     return (
       <div>
         <h3>{selectedArtist.name}</h3>
@@ -26,17 +26,17 @@ export default class Artist extends React.Component {
           {
             (selectedArtist && selectedArtist.albums)
               ? selectedArtist.albums.map(album => {
-                console.log(album);
                 return (
                   <div className="col-xs-4" key={album.id}>
-                    <Link className="thumbnail" to={`/albums/${album.id}`} onClick={() => go(album)}></Link>
-                    <img src={album.imageUrl} />
-                    <div className="caption">
-                      <h5>
-                        <span>{album.name}</span>
-                      </h5>
-                      <small>{album.songs.length}songs</small>
-                    </div>
+                    <Link className="thumbnail" to={`/albums/${album.id}`} onClick={() => go(album)}>
+                      <img src={album.imageUrl} />
+                      <div className="caption">
+                        <h5>
+                          <span>{album.name}</span>
+                        </h5>
+                        <small>{album.songs.length}songs</small>
+                      </div>
+                    </Link>
                   </div>
                 )
               })
