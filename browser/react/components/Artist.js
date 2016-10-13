@@ -34,7 +34,7 @@ export default class Artist extends React.Component {
                         <h5>
                           <span>{album.name}</span>
                         </h5>
-                        <small>{album.songs.length}songs</small>
+                        <small>{album.songs.length} songs</small>
                       </div>
                     </Link>
                   </div>
