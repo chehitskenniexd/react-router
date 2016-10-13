@@ -1,11 +1,13 @@
 'use strict';
 
 import React from 'react';
-import Router from 'react-router'
+import { Router, hashHistory, Route, IndexRoute } from 'react-router';
 import ReactDOM from 'react-dom';
 import store from './store';
 import {Provider} from 'react-redux';
 import AppContainer from './containers/AppContainer';
+import SidebarContainer from './containers/SidebarContainer'
+import PlayerContainer from './containers/PlayerContainer'
 
 class BaseRoute extends React.Component {
   render() {
@@ -26,7 +28,7 @@ class BaseRoute extends React.Component {
 
 ReactDOM.render(
   <Provider store={store}>
-  <Router history={Router.hashHistory}>
+  <Router history={hashHistory}>
     <Route path='/' component={BaseRoute}></Route>
   </Router>
 </Provider>, document.getElementById('app'));
