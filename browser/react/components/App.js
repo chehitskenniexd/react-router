@@ -37,16 +37,7 @@ export default class App extends Component {
           <SidebarContainer />
         </div>
         <div className="col-xs-10">
-          {
-            (() => {
-              switch (location) {
-                case 'albums': return <AlbumsContainer />
-                case 'artists': return <ArtistsContainer />
-                case 'album': return <AlbumContainer />
-                case 'artist': return <ArtistContainer /> 
-              }
-            })()
-          }
+          { this.props.children }
         </div>
         <PlayerContainer />
       </div>
