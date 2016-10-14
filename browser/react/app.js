@@ -14,6 +14,7 @@ import AlbumContainer from './containers/AlbumContainer';
 import ArtistContainer from './containers/ArtistContainer';
 import SongsContainer from './containers/SongsContainer';
 import ArtistAlbumsContainer from './containers/ArtistAlbumsContainer';
+import { fetchArtist } from './action-creators/artists';
 
 
 // Note: for the subroute /artists/:artistId/albums
@@ -27,7 +28,8 @@ ReactDOM.render(
         <Route path='/albums' component={AlbumsContainer} />
         <Route path='/artists' component={ArtistsContainer} />
         <Route path='/albums/:albumId' component={AlbumContainer} />
-        <Route path='/artists/:artistId' component={ArtistContainer}> 
+        <Route path='/artists/:artistId' component={ArtistContainer} 
+          onEnter={(nextState) => {store.dispatch(fetchArtist(nextState.params.artistId))}}> 
           <Route path='/artists/:artistId/albums' component={AlbumsContainer}/>
           <Route path='/artists/:artistId/songs' component={SongsContainer}/>
         </Route>        
